@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Diabetes Prediction</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8d7da;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 100vh;
+      }
+      .container {
+        max-width: 800px;
+        width: 100%;
+        background: #fff;
+        padding: 2rem;
+        margin: 1rem;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        overflow: auto;
+      }
+      h1,
+      h2 {
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        font-size: 0.9em;
+        color: #666;
+        margin-bottom: 5px;
+      }
+      input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      button {
+        padding: 10px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 100%;
+      }
+      button:hover {
+        background-color: #0056b3;
+      }
+      .reset-button {
+        background-color: #6c757d;
+        margin-top: 5px;
+      }
+      .reset-button:hover {
+        background-color: #5a6268;
+      }
+      .description {
+        margin-top: 20px;
+        font-size: 0.9em;
+        color: #555;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Diabetes Prediction</h1>
+      <h2>Model Overview</h2>
+      <p>
+        This model predicts the likelihood of diabetes based on various health
+        metrics. Please enter the following details to get the prediction:
+      </p>
+      <form action="/predictdata" method="POST">
+        <!-- Form fields remain the same -->
+        <label for="Pregnancies">
+          <strong>Pregnancies:</strong> Number of times pregnant (0-20)
+        </label>
+        <input
+          type="text"
+          id="Pregnancies"
+          name="Pregnancies"
+          placeholder="Pregnancies"
+          required
+        />
+
+        <label for="Glucose">
+          <strong>Glucose:</strong> Plasma glucose concentration (70-200 mg/dL)
+        </label>
+        <input
+          type="text"
+          id="Glucose"
+          name="Glucose"
+          placeholder="Glucose"
+          required
+        />
+
+        <label for="BloodPressure">
+          <strong>Blood Pressure:</strong> Diastolic blood pressure (30-122 mm
+          Hg)
+        </label>
+        <input
+          type="text"
+          id="BloodPressure"
+          name="BloodPressure"
+          placeholder="Blood Pressure"
+          required
+        />
+
+        <label for="SkinThickness">
+          <strong>Skin Thickness:</strong> Triceps skin fold thickness (0-99 mm)
+        </label>
+        <input
+          type="text"
+          id="SkinThickness"
+          name="SkinThickness"
+          placeholder="Skin Thickness"
+          required
+        />
+
+        <label for="Insulin">
+          <strong>Insulin:</strong> 2-Hour serum insulin (0-846 IU/mL)
+        </label>
+        <input
+          type="text"
+          id="Insulin"
+          name="Insulin"
+          placeholder="Insulin"
+          required
+        />
+
+        <label for="BMI"> <strong>BMI:</strong> Body mass index (18-67) </label>
+        <input type="text" id="BMI" name="BMI" placeholder="BMI" required />
+
+        <label for="DiabetesPedigreeFunction">
+          <strong>Diabetes Pedigree Function:</strong> A function which scores
+          likelihood of diabetes based on family history (0-2.5)
+        </label>
+        <input
+          type="text"
+          id="DiabetesPedigreeFunction"
+          name="DiabetesPedigreeFunction"
+          placeholder="Diabetes Pedigree Function"
+          required
+        />
+
+        <label for="Age"> <strong>Age:</strong> Age in years (21-81) </label>
+        <input type="text" id="Age" name="Age" placeholder="Age" required />
+
+        <button type="submit">Predict</button>
+      </form>
+
+      <div class="description">
+        <h2>About the Prediction Model</h2>
+        <p>
+          This diabetes prediction model uses various health indicators to
+          estimate the likelihood of diabetes. Ensure all input values are
+          entered accurately.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

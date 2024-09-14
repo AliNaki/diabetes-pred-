@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prediction Result</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #e9ecef;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .container {
+        max-width: 600px;
+        background-color: #fff;
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1 {
+        color: #343a40;
+      }
+      .result-box {
+        margin: 20px 0;
+        padding: 10px;
+        background-color: #f8d7da;
+        color: #dc3545;
+        font-size: 1.5rem;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      .inputs {
+        text-align: left;
+        margin-top: 20px;
+      }
+      .inputs p {
+        margin: 5px 0;
+        font-size: 1rem;
+      }
+      .back-button {
+        display: block;
+        margin: 20px auto;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+        font-size: 1rem;
+      }
+      .back-button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Prediction Result</h1>
+      <div class="result-box">Diabetes Prediction: {{ result }}</div>
+      <div class="inputs">
+        <p><strong>Pregnancies:</strong> {{ Pregnancies }}</p>
+        <p><strong>Glucose:</strong> {{ Glucose }}</p>
+        <p><strong>Blood Pressure:</strong> {{ BloodPressure }}</p>
+        <p><strong>Skin Thickness:</strong> {{ SkinThickness }}</p>
+        <p><strong>Insulin:</strong> {{ Insulin }}</p>
+        <p><strong>BMI:</strong> {{ BMI }}</p>
+        <p>
+          <strong>Diabetes Pedigree Function:</strong> {{
+          DiabetesPedigreeFunction }}
+        </p>
+        <p><strong>Age:</strong> {{ Age }}</p>
+      </div>
+      <a href="/" class="back-button">Predict Again</a>
+    </div>
+  </body>
+</html>
